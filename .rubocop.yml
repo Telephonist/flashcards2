@@ -1,0 +1,20 @@
+Metrics/LineLength:
+  Max: 120
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SpaceInsideBrackets:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    '%i': ()
+    '%w': ()
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false

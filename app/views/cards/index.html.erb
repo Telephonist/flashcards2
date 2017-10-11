@@ -1,0 +1,20 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Original text</th>
+    <th>Translated text</th>
+    <th>Review date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @cards.each do |cards| %>
+      <tr>
+        <td><%= cards.id %></td>
+        <td><%= cards.original_text %></td>
+        <td><%= cards.translated_text %></td>
+        <td><%= cards.review_date %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
