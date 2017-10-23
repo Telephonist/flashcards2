@@ -5,15 +5,20 @@
     <th>Original text</th>
     <th>Translated text</th>
     <th>Review date</th>
+    <th colspan="3">Просмотр/Редактирование/Удаление</th>
   </tr>
   </thead>
   <tbody>
   <% @cards.each do |card| %>
       <tr>
         <td><%= card.id %></td>
-        <td><%= card.original_text %></td>
+        <td><%= link_to card.original_text, card_path(card.id) %></td>
         <td><%= card.translated_text %></td>
         <td><%= card.review_date.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Редактировать карточку', edit_card_path(card.id) %></td>
+        <td><%= link_to 'Удалить карточку', card_path(card),
+                        method: :delete,
+                        data: { confirm: 'Вы уверены?' } %></td>
       </tr>
   <% end %>
   </tbody>
