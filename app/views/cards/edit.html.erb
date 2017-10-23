@@ -1,0 +1,21 @@
+<body>
+<section id="container">
+  <div class="list-group">
+    <a class="list-group-item disabled">Карточка № <%= @card.id %></a>
+    <a class="list-group-item"><%= @card.original_text %></a>
+    <a class="list-group-item"><%= @card.translated_text %></a>
+    <a class="list-group-item"><%= @card.review_date %></a>
+  </div>
+  <%= simple_form_for @card do |f| %>
+    <%= f.input :original_text, label: 'German is' %>
+    <%= f.input :translated_text, label: 'English is' %>
+    <%= f.input :review_date, :as => :hidden %>
+    <%= f.button :submit %>
+  <% end %>
+  <section>
+    <button type="button" class="btn"><%= link_to 'Назад ко всем карточкам', cards_path %></button>
+    <button type="button" class="btn"><%= link_to 'Удалить карточку', card_path(@card),
+                                                  method: :delete,
+                                                  data: { confirm: 'Вы уверены?' } %></button>
+  </section>
+</body>

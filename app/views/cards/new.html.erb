@@ -1,0 +1,13 @@
+<body>
+<section id="container">
+
+  <%= simple_form_for(@card, html: { class: '.form-horizontal'}) do |f| %>
+
+      <%= f.input :original_text, label: 'German is:', error: 'Слово введено некоректно' %>
+      <%= f.input :translated_text, label: 'English is:', error: 'Перевод введен некоректно' %>
+      <%= f.input :review_date %>
+      <%= f.button :submit %>
+  <% end %>
+
+</section>
+</body>

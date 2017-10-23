@@ -1,0 +1,16 @@
+<body>
+  <section id="container">
+      <div class="list-group">
+        <a class="list-group-item disabled">Карточка № <%= @card.id %></a>
+        <a class="list-group-item"><%= @card.original_text %></a>
+        <a class="list-group-item"><%= @card.translated_text %></a>
+        <a class="list-group-item"><%= @card.review_date %></a>
+      </div>
+
+    <button type="button" class="btn"><%= link_to 'Редактировать карточку', edit_card_path(@card.id) %></button>
+    <button type="button" class="btn"><%= link_to 'Назад ко всем карточкам', cards_path %></button>
+    <button type="button" class="btn"><%= link_to 'Удалить карточку', card_path(@card),
+                                                              method: :delete,
+                                                              data: { confirm: 'Вы уверены?' } %></button>
+    <section>
+  </body>
