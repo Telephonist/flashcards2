@@ -9,4 +9,14 @@ class Card < ApplicationRecord
   before_create do
     self.review_date = 3.days.from_now
   end
+
+  scope :for_review, -> { where("review_date <= ?", 0.days.from_now).order("RANDOM()") }
+
+  def correctly_translated(user_input)
+    translated_text == user_input
+  end
+
+  def update_review_date
+    update(review_date: 3.days.from_now)
+  end
 end
