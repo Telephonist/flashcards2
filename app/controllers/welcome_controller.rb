@@ -5,8 +5,8 @@ class WelcomeController < ApplicationController
   end
 
   def check_translation
-    @card = Card.find(params[:id])
-    if @card.correctly_translated(params[:user_input])
+    @card = Card.find(params[:check_translation][:id])
+    if @card.correctly_translated(params[:check_translation][:user_input])
       @card.update_review_date
       flash[:notice] = "true"
     else
