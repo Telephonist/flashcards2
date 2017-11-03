@@ -3,5 +3,17 @@
     <div class="well well-lg">
      <p style="font-size: 22px;"; align="center"> Первый в мире удобный флэш-карточек. Именно так.</p>
     </div>
+    <% if @card.present? %>
+        <%= simple_form_for :check_translation, url: check_translation_path(@card) do |f| %>
+            <p>For translate:</p>
+            <%= f.hidden_field :id, value: @card.id %>
+            <%= f.hidden_field :translated_text, value: @card.translated_text %>
+            <%= f.label @card.original_text %>
+            <%= f.input :user_input, label: "Input translate"  %>
+            <%= f.button :submit, "Check" %>
+        <% end %>
+    <% else %>
+    <p>Загляни сюда попозже.</p>
+    <% end %>
   </section>
 </body>
